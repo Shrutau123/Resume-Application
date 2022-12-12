@@ -1,0 +1,24 @@
+<mat-card class="example-card">
+  <h1 style="text-align: center;">Login</h1>
+  <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.invalid)">
+
+    <p fxLayoutAlign="center center">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Placeholder" [(ngModel)] = "email" #email_="ngModel" name="email" required type="email">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint *ngIf="email_.touched && email_.invalid">Enter valid Email Id</mat-hint>
+      </mat-form-field>
+    </p>
+    <p style="text-align: center">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Placeholder" [(ngModel)] = "password"  #password_="ngModel" name="password" required type="password">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint *ngIf="password_.touched && password_.invalid">Please enter password.</mat-hint>
+      </mat-form-field>
+    </p>
+
+    <button mat-raised-button color="primary">Login</button>
+  </form>
+</mat-card>
