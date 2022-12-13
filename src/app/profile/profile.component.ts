@@ -8,15 +8,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  
- 
-  constructor(private auth:AuthService) { 
+
+
+  constructor(private auth: AuthService) {
     console.log(this.auth.isLoggedIn());
-     
   }
 
   ngOnInit(): void {
+  }
 
-}
-    
 }

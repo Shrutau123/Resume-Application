@@ -8,23 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  isValid=false
+  isValid = false
 
-  constructor(private userService: UserServiceService,private _snackBar:MatSnackBar ) {}
+  constructor(private userService: UserServiceService, private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    
-    this.userService.checkUser().subscribe((res: any) => {     
-       console.log(res);
-       
+
+    this.userService.checkUser().subscribe((res: any) => {
+      console.log(res);
+
     }, (e: any) => {
       console.log(e);
-      this.isValid=true
+      this.isValid = true
 
-      
-     
+
+
     })
 
   }
-
 }

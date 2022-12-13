@@ -12,8 +12,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
-
-
 @NgModule({
   imports: [
     CommonModule,
@@ -27,9 +25,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     FormsModule,
     MatCheckboxModule,
-    
-
-
   ],
   exports: [
     MatFormFieldModule,
@@ -42,7 +37,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     FormsModule,
     MatCheckboxModule,
-    
 
   ]
 })
