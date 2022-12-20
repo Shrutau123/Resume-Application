@@ -39,4 +39,8 @@ export class AuthService {
     return this.http.get<any>(environment.baseUrl + 'profile')
   }
 
+  public createProfile(data: any): Observable<any> {
+    return this.http.post<any>(environment.baseUrl + 'profile', data)
+  }
+
 }

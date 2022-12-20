@@ -1,0 +1,57 @@
+<button mat-raised-button color="primary" routerLink="/profiles" class="profileBtn">Back to profiles</button>
+<div class="center">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <img src="assets/img.png" alt="Avatar" />
+    </mat-card-header><br>
+    <mat-card-title>
+      <h2>{{ user?.user?.name}}</h2>
+    </mat-card-title>
+    <mat-card-content>
+      <div>
+        <h5>{{user?.status}} at {{user?.company}}</h5>
+      </div>
+      <p>{{user?.location}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="{{user?.social?.twitter}}" target="_blank"><em class="fa-brands fa-twitter"></em></a>&nbsp;
+      <a href="{{user?.social?.facebook}}" target="_blank"><em class="fa-brands fa-facebook"></em></a>&nbsp;
+      <a href="{{user?.social?.linkedin}}" target="_blank"><em class="fa-brands fa-linkedin"></em></a>&nbsp;
+      <a href="{{user?.social?.youtube}}" target="_blank"><em class="fa-brands fa-youtube"></em></a>&nbsp;
+      <a href="{{user?.social?.instagram}}" target="_blank"><em class="fa-brands fa-instagram"></em></a>&nbsp;
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="example-card1">
+    <mat-card-content>
+      <h2><p><strong>{{ user?.user?.name}}'s Bio</strong></p></h2>
+    </mat-card-content>
+    <mat-card-actions> {{user?.bio}} </mat-card-actions>
+    <hr>
+    <mat-card-content>
+      <div>
+        <h2><p><strong>Skills Set</strong></p></h2>  
+        <em class="fa fa-check"></em> {{user?.skills}}
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="flex-container">
+    <div class="left" *ngIf="user?.experience">
+      <h2>Experience</h2>
+      <mat-card class="example-card2" *ngFor="let item of user?.experience;">
+        <h2><p><strong>{{item?.company}}</strong></p></h2>{{item?.from}} <br>
+        <strong>Position:</strong>{{item?.title}} <br>
+        <strong>Description:</strong>{{item?.description}} <br>
+      </mat-card>
+    </div>
+    <div class="right">
+      <h2>Education</h2>
+      <mat-card class="example-card2" *ngFor="let item of user?.education;">
+        <h2><p><strong>{{item?.school}}</strong></p></h2>{{item?.from}} <br>
+        <strong>Degree:</strong>{{item?.degree}} <br>
+        <strong>Field of Study:</strong>{{item?.fieldofstudy}} <br>
+        <strong>Description:</strong>{{item?.description}}
+      </mat-card>
+    </div>
+  </div>
+</div>

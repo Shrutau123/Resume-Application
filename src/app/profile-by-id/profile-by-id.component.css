@@ -1,0 +1,76 @@
+.example-card {
+  width: 90%;
+  max-height: 600px;
+  margin: 20px;
+  background-color: #17a2b8;
+  color: azure;
+}
+.example-card1 {
+  max-width: 20%;
+  width: 20%;
+  max-height: 300px;
+  margin: 20px;
+  text-align: center;
+}
+.example-card2 {
+  width: 90%;
+  max-height: 400px;
+  margin: 20px;
+}
+img {
+  border-radius: 50%;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex-container {
+  display: flex;
+}
+.left {
+  width: 50%;
+  flex: 1;
+}
+.right {
+  width: 50%;
+  margin-left: auto;
+  margin-right: 0;
+}
+.center {
+  text-align: center;
+  margin-left: 60px;
+}
+.text {
+  text-decoration: none;
+}
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.profileBtn {
+  margin: 2%;
+  margin-left: 75px;
+}
+h2 {
+  text-align: center;
+}

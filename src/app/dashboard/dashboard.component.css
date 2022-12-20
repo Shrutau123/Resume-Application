@@ -1,0 +1,33 @@
+.padd {
+  padding: 20px;
+}
+
+.mr {
+  margin-top: 20px;
+}
+
+table {
+  width: auto;
+}
+
+.ml {
+  margin-left: 20px;
+}
+
+.w-75 {
+  width: 75px;
+}
+
+.w-100 {
+  width: 100px;
+}
+
+.th-center{
+  text-align: center;
+}
+.th-left{
+  text-align: left;
+}
+.th-right{
+  text-align: right;
+}
