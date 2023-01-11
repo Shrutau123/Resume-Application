@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class DashboardModule { }

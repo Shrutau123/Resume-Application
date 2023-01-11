@@ -1,0 +1,23 @@
+<div style="text-align: center;">
+  <h2>Developer Profiles</h2>
+  <h4>Browse and connect with developers</h4>
+</div>
+<div>
+  <mat-card class="example-card" *ngFor="let user of users; index as i">
+    <img src="assets/img.png" alt="Avatar" />
+    <div class="container">
+      <mat-card-header>
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-title>{{user.user.name}} <span> Skill set:</span> </mat-card-title> <br> <mat-card><span
+            class="fill"><em class="fa fa-check"></em> {{user.skills}}</span></mat-card><br>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{user.status}} at {{user.company}}</p>
+        <p>{{user.location}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" [routerLink]="['/profile', user.handle]">View Profile</button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</div>
