@@ -1,2 +1,89 @@
-    <h1 style="text-align: center;">profile works</h1>
-  
+<h1> Create Your Profile</h1>
+<h4>Let's get some information to make your profile stand out</h4>
+<div class="center">
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+      <div>
+        <mat-form-field appearance="fill" class="padd">
+          <mat-label> Profile Handle</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="handle">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>* Select Professional Status</mat-label>
+          <mat-select formControlName="status" name="status">
+            <mat-option *ngFor="let Status of stat" [value]="Status.value">
+              {{Status.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="padd">
+          <mat-label> Company</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="company">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label> Website </mat-label>
+          <input matInput placeholder="Placeholder" formControlName="website">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="padd">
+          <mat-label>Location</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="location">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Skills</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="skills">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill" class="padd">
+          <mat-label> Github Username</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="githubusername">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>A short bio of yourself</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="bio">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </div>
+      <button mat-stroked-button (click)="onDisplaySocialInputs()" for class="mr" value={{view}}>Add Social Network Links</button><br>
+      <div *ngIf="view">
+        <span><em class="fa-brands fa-twitter"></em></span>
+        <mat-form-field appearance="fill" class="padd">
+          <mat-label>Twitter Profile URL</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="twitter">
+        </mat-form-field>
+        <span><em class="fa-brands fa-facebook"></em></span>
+        <mat-form-field appearance="fill">
+          <mat-label>Facebook Profile URL</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="facebook">
+        </mat-form-field>
+        <span><em class="fa-brands fa-linkedin"></em></span>
+        <mat-form-field appearance="fill">
+          <mat-label>Linkedin Profile URL</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="linkedin">
+        </mat-form-field>
+        <span><em class="fa-brands fa-youtube"></em></span>
+        <mat-form-field appearance="fill">
+          <mat-label>Youtube Channel URL</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="youtube">
+        </mat-form-field>
+        <span><em class="fa-brands fa-instagram"></em></span>
+        <mat-form-field appearance="fill" class="padd">
+          <mat-label>Instagram Page URL</mat-label>
+          <input matInput placeholder="Placeholder" formControlName="instagram">
+        </mat-form-field>
+      </div>
+      <button *ngIf="!isEdit" mat-raised-button color="primary" type="submit">Create</button>
+      <button *ngIf="isEdit" mat-raised-button color="primary" type="submit">Update</button>
+    </form>
+  </div>
+</div>

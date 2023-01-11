@@ -1,26 +1,24 @@
-
 <!-- Before Logging In -->
 <mat-toolbar color="primary" class="app-header">
-    
-    <div><a href="https://www.positronx.io" target="_blank" class="positronx">PositronX.io</a></div>
-    <span class="example-spacer"></span>
-    <span class="nav-tool-items" [ngSwitch]="menuType">
-  
-      <span>  
-      <a  *ngIf="!isAuthenticated" style="margin-right:20px" mat-button mat-raised-button routerLink="" routerLinkActive="active" >Log in</a>
-      <a *ngIf="!isAuthenticated" mat-button mat-raised-button routerLink="signup" style="margin-right:20px" >Register</a>
-      <a *ngIf="!isAuthenticated" mat-button mat-raised-button routerLink="signup" >About</a>
+  <div><a href="/" class="positronx">DeV-Connector</a></div>
+  <span class="example-spacer"></span>
+  <span class="nav-tool-items" [ngSwitch]="menuType">
+    <span>
+      <a *ngIf="!isAuthenticated" style="margin-right:20px" mat-button mat-raised-button routerLink=""
+        routerLinkActive="active">Log in</a>
+      <a *ngIf="!isAuthenticated" mat-button mat-raised-button routerLink="signup"
+        style="margin-right:20px">Register</a>
+      <a *ngIf="!isAuthenticated" mat-button mat-raised-button routerLink="signup">About</a>
     </span>
-
-
     <!-- After Logging In -->
-    <span >  
-        <a  *ngIf="isAuthenticated" style="margin-right:20px" mat-button mat-raised-button routerLink="profile" routerLinkActive="active" >Profile</a>
-        <a  *ngIf="isAuthenticated" mat-button mat-raised-button routerLink="dashboard" style="margin-right:20px" >Dashboard</a>
-        <a *ngIf="isAuthenticated" mat-button mat-raised-button (click)="logout()" >Logout</a>
-      </span>
-
-
+    <span>
+      <a *ngIf="isAuthenticated" style="margin-right:20px" mat-button mat-raised-button routerLink="profile"
+        routerLinkActive="active">Profile</a>
+      <a *ngIf="isAuthenticated" mat-button mat-raised-button routerLink="dashboard"
+        style="margin-right:20px">Dashboard</a>
+        <a *ngIf="isAuthenticated" style="margin-right:20px" mat-button mat-raised-button routerLink="profiles"
+        routerLinkActive="active">Profiles</a>
+      <a *ngIf="isAuthenticated" mat-button mat-raised-button (click)="logout()">Logout</a>
     </span>
-  </mat-toolbar>
-
+  </span>
+</mat-toolbar>

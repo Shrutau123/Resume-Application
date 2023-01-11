@@ -1,1 +1,67 @@
-<p>dashboard works!</p>
+<h1 class="mr ml">Dashboard</h1>
+<span *ngIf="isValid">
+  <a mat-button mat-raised-button routerLink="/profile">Create Profile</a>
+  <h4>Welcome {{tokenInfo.name}} </h4>
+  <h4>You have not yet setup a profile, please add some info</h4>
+</span>
+<span *ngIf="!isValid" class="ml">
+  <em class="fa-solid fa-user"></em><a mat-button mat-raised-button routerLink="/profile">Edit Profile</a>
+  <em class="fa-brands fa-black-tie"></em><a mat-button mat-raised-button routerLink="/experience">Add Experience</a>
+  <em class="fa-solid fa-book-open-reader"></em><a mat-button mat-raised-button routerLink="/education">Add
+    Education</a>
+  &nbsp;
+  <h4 class="mr ml">Experience Credentials</h4>
+  <table mat-table [dataSource]="company" class="mat-elevation-z8" class="padd" [ngClass]="'w-75'">
+    <ng-container matColumnDef="company">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Company </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.company}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Title </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.title}} </td>
+    </ng-container>
+    <ng-container matColumnDef="years">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Years </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.from}}-{{element.to}} </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Delete </th>
+      <td mat-cell *matCellDef="let element ; let i = index" class="th-center">
+        <button mat-raised-button color="warn" (click)="deleteExp(element._id,i)">Delete</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>
+  <h4 class="ml">Education Credentials</h4>
+  <table mat-table [dataSource]="school" class="mat-elevation-z8" class="padd" [ngClass]="'w-75'">
+    <ng-container matColumnDef="school">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> School </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.school}}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="degree">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Degree </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.degree}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fieldofstudy">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Field of Study </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.fieldofstudy}} </td>
+    </ng-container>
+    <ng-container matColumnDef="years">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Years </th>
+      <td mat-cell *matCellDef="let element" class="th-center"> {{element.from}}-{{element.to}} </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="th-center"> Delete </th>
+      <td mat-cell *matCellDef="let element ; let i = index" class="th-center">
+        <button mat-raised-button color="warn" (click)="deleteEdu(element._id,i)">Delete</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+  </table>
+  <button mat-stroked-button color="warn" class="mr ml" (click)="deleteUser()">Delete My Account</button>
+</span>

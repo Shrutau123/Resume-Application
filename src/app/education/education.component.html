@@ -1,0 +1,52 @@
+<h1> Add Your Education </h1>
+<h4>Add any school, bootcamp, etc that you have attended</h4>
+<form #eduForm="ngForm" (ngSubmit)="addEduUser(eduForm)">
+  <div class="center">
+    <mat-form-field appearance="fill">
+      <mat-label>School</mat-label>
+      <input matInput placeholder="Placeholder" ngModel name="school" required>
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Degree</mat-label>
+        <input matInput placeholder="Placeholder" ngModel name="degree" required>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Field Of Study</mat-label>
+        <input matInput placeholder="Placeholder" ngModel name="fieldofstudy" required>
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>From date</mat-label>
+        <input matInput [matDatepicker]="picker1" ngModel name="from" required>
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field><br>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>To date</mat-label>
+        <input matInput [matDatepicker]="picker2" ngModel name="to" required [disabled]="checked" value="true">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <p><mat-checkbox class="example-margin" [(ngModel)]="checked" name="current" value="true">Current Job</mat-checkbox>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Program Description" ngModel name="description"></textarea>
+        <mat-hint>Tell us about your experience and what you learned</mat-hint>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary">Submit</button>
+  </div>
+</form>

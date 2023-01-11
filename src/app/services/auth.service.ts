@@ -32,10 +32,15 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return localStorage.getItem('user')
+    return localStorage.getItem('user');
   }
 
+  checkUser() {
+    return this.http.get<any>(environment.baseUrl + 'profile')
+  }
 
-
+  public createProfile(data: any): Observable<any> {
+    return this.http.post<any>(environment.baseUrl + 'profile', data)
+  }
 
 }
